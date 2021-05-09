@@ -22,6 +22,7 @@ class Users extends Migration
             $table->string('document_number',255);
             $table->string('email',255)->unique();
             $table->string('phone',255);
+            $table->string('password',255);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -34,6 +35,6 @@ class Users extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('users');
     }
 }
