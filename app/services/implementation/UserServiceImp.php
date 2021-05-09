@@ -15,8 +15,11 @@ class UserServiceImp implements IUserInterface{
         $this->model = new User();
     }
 
+    /**
+     * Retorna una lista con todos los usuarios
+     */
     function getAllUsers(){ 
-
+        return $this->model->get();
     }
 
     function getUserById(int $id){
