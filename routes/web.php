@@ -17,4 +17,16 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/posts', ['uses' => 'UsuariosController@getAllPost']);
+
+
+
+// Versionamiento de servicos
+$router->group(['prefix'=>'/v1'],function () use ($router){
+    $router->group(['prefix'=>'/users'],function () use ($router){
+        /* POST */
+        $router->post('/register', 'UserController@createUser');
+        /* GET */
+        $router->get('/list', 'UserController@getUsersList');
+
+    });
+});
