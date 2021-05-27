@@ -10,9 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Lumen\Auth\Authorizable;
 
-class User extends Model implements AuthenticatableContract, AuthorizableContract
-{
-    use Authenticatable, Authorizable, HasFactory, SoftDeletes;
+class Author extends Model{
 
     /**
      * The attributes that are mass assignable.
@@ -21,15 +19,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     protected $fillable = [
         'name', 
-        'firstname',
-        'lastname',
-        'document_type',
-        'document_number',
-        'password',
-        'email',
-        'phone',
-        'created_at',
-        'updated_at',
+        'gender',
+        'country',
     ];
 
     /**
