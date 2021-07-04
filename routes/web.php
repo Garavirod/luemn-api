@@ -27,6 +27,6 @@ $router->group(['prefix'=>'/v1'],function () use ($router){
         $router->post('/register', 'Author/AuthorController@storeAuthor');
         /* GET */
         $router->get('/list', 'Author/AuthorController@authorsList');
-
+        $router->get('/', 'Author/AuthorController@authorsList');
     });
 });
