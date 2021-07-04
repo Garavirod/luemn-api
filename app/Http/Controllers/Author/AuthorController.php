@@ -13,7 +13,7 @@ class AuthorController extends Controller
     }
 
     /**
-     * Return Author's list
+     * Return a Author's list
      * @return Illuminate\Http\Response
      */
     public function authorsList(){
