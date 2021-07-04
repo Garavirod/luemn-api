@@ -24,9 +24,9 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix'=>'/v1'],function () use ($router){
     $router->group(['prefix'=>'/users'],function () use ($router){
         /* POST */
-        $router->post('/register', 'UserController@createUser');
+        $router->post('/register', 'Author/AuthorController@storeAuthor');
         /* GET */
-        $router->get('/list', 'UserController@getUsersList');
+        $router->get('/list', 'Author/AuthorController@authorsList');
 
     });
 });
