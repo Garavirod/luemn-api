@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Author;
 use App\Http\Controllers\Controller;
 use App\Models\Author;
 use App\Traits\ApiResponser;
+use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -32,7 +33,15 @@ class AuthorController extends Controller
      * @return Illuminate\Http\Response
      */
     public function storeAuthor(Request $request){
-        
+        $rules =[
+            'name'=> 'required|max:255',
+            'gender'=> 'required|max:255|in:male,famle',
+            'country'=> 'required|max:255',
+        ];
+
+        $this->validate($request, $rules);
+        $author = Author::create($request->all());
+        return $this->successResponse($author,Response::HTTP_CREATED);
     }
 
 

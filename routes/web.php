@@ -24,14 +24,14 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix'=>'/v1'],function () use ($router){
     $router->group(['prefix'=>'/users'],function () use ($router){
         /* POST */
-        $router->post('/register', 'Author/AuthorController@storeAuthor');
+        $router->post('/register', 'Author\AuthorController@storeAuthor');
         /* GET */
-        $router->get('/list', 'Author/AuthorController@authorsList');
-        $router->get('/autor/{autor}', 'Author/AuthorController@getAuthor');
+        $router->get('/list', 'Author\AuthorController@authorsList');
+        $router->get('/autor/{autor}', 'Author\AuthorController@getAuthor');
         /* PUT */
-        $router->put('/autor/{autor}/','Author/AuthorController@updateAuthor');
-        $router->patch('/autor/{autor}/','Author/AuthorController@updateAuthor');
+        $router->put('/autor/{autor}/','Author\AuthorController@updateAuthor');
+        $router->patch('/autor/{autor}/','Author\AuthorController@updateAuthor');
         /* DELETE */
-        $router->delete('/autor/{autor}/','Author/AuthorController@deleteAutor');
+        $router->delete('/autor/{autor}/','Author\AuthorController@deleteAutor');
     });
 });
