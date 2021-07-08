@@ -30,7 +30,8 @@ $router->group(['prefix'=>'/v1'],function () use ($router){
         $router->get('/autor/{autor}', 'Author/AuthorController@getAuthor');
         /* PUT */
         $router->put('/autor/{autor}/','Author/AuthorController@updateAuthor');
+        $router->patch('/autor/{autor}/','Author/AuthorController@updateAuthor');
         /* DELETE */
-        $router->patch('/autor/{autor}/','Author/AuthorController@deleteAutor');
+        $router->delete('/autor/{autor}/','Author/AuthorController@deleteAutor');
     });
 });

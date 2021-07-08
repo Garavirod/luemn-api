@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Author;
 
 use App\Http\Controllers\Controller;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
+    // Standar responses
+    use ApiResponser;
+
     public function __construct()
     {
         //
