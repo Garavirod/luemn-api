@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Author;
 
 use App\Http\Controllers\Controller;
+use App\Models\Author;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
@@ -20,8 +21,10 @@ class AuthorController extends Controller
      * Return a Author's list
      * @return Illuminate\Http\Response
      */
-    public function authorsList(){
-
+    public function authorsList()
+    {
+        $authors = Author::all();
+        return $this->successResponse($authors);
     }
 
     /**
