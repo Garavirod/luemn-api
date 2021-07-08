@@ -49,8 +49,9 @@ class AuthorController extends Controller
      * Return an specific Author
      * @return Illuminate\Http\Response
      */
-    public function getAuthor(Request $request){
-        
+    public function getAuthor($author){
+        $author = Author::findOrFail($author);
+        return $this->successResponse($author);
     }
 
     /**

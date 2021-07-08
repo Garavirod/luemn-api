@@ -27,11 +27,11 @@ $router->group(['prefix'=>'/v1'],function () use ($router){
         $router->post('/register', 'Author\AuthorController@storeAuthor');
         /* GET */
         $router->get('/list', 'Author\AuthorController@authorsList');
-        $router->get('/autor/{autor}', 'Author\AuthorController@getAuthor');
+        $router->get('/authors/{author}', 'Author\AuthorController@getAuthor');
         /* PUT */
-        $router->put('/autor/{autor}/','Author\AuthorController@updateAuthor');
-        $router->patch('/autor/{autor}/','Author\AuthorController@updateAuthor');
+        $router->put('/authors/{author}/','Author\AuthorController@updateAuthor');
+        $router->patch('/authors/{author}/','Author\AuthorController@updateAuthor');
         /* DELETE */
-        $router->delete('/autor/{autor}/','Author\AuthorController@deleteAutor');
+        $router->delete('/authors/{author}/','Author\AuthorController@deleteAutor');
     });
 });
